@@ -35,14 +35,15 @@ if (time()-$_SESSION['timestamp']>$idletime){
     <img src="http://comenius.urspringschule.de/urspring/Lilienfries.jpg" width="100%"/>
 </header>
 <div id="content">
-
     <?php
-    $type = $_SESSION['type'];
-    if ($type == "student"){
-        include ("../sites/student.php");
-    } else if ($type == "teacher"){
-        include ("../sites/teacher.php");
-    } else header("Location: ../index.php");
+    if (isset($_SESSION['type'])) {
+        $type = $_SESSION['type'];
+        if ($type == "student"){
+            include ("../sites/student-downloads.php");
+        } else if ($type == "teacher"){
+            include ("../sites/teacher-downloads.php");
+        } else header("Location: ../index.php");
+    }
 
     ?>
 </div>

@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: maximilian
- * Date: 30.09.17
- * Time: 16:14
- */
+session_start();
+session_destroy();
+header ("Location: ../index.php");

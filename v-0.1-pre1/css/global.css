@@ -1,2 +1,116 @@
-#wrapper{min-height:100%; margin:0 auto -50px; height:auto !important}
-#stickyfooter{height:50px; margin-top:-50px}
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+.content {
+    min-height: calc(100vh - 70px);
+}
+
+
+body {
+    background:linear-gradient(#f2d080 25%, #0066a9 100%);
+    background-attachment: fixed;
+    color: #000;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+footer {
+    height: 80px;
+    position: absolute;
+    left: 0 ; right: 0; bottom: 0;
+    color: white;
+    line-height: 80px;
+    padding: 0 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.blueBg {
+    color: #fff;
+    background: #003772;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMzc3MiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY4JSIgc3RvcC1jb2xvcj0iIzAwNjZhOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDM3NzIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left, #003772 0%, #0066a9 68%, #003772 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#003772), color-stop(68%,#0066a9), color-stop(100%,#003772));
+    background: -webkit-linear-gradient(left, #003772 0%,#0066a9 68%,#003772 100%);
+    background: -o-linear-gradient(left, #003772 0%,#0066a9 68%,#003772 100%);
+    background: -ms-linear-gradient(left, #003772 0%,#0066a9 68%,#003772 100%);
+    background: linear-gradient(to right, #003772 0%,#0066a9 68%,#003772 100%);
+}
+
+h1 {
+    font-size: 30px;
+    font-family: 'FontAwesome', sans-serif;
+    text-align: center;
+}
+
+text {
+    font-size: 15px;
+    font-family: Arial, serif;
+    margin-text-outline: 30px;
+}
+
+.info {
+    font-size: 15px;
+    font-family: Arial, serif;
+}
+
+.info p{
+    font-size: 25px;
+    font-style: oblique;
+}
+
+.info span{
+    color: #0066a9;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+.downloads {
+    color: #003772;
+    text-decoration: none;
+}
+
+.downloads:hover{
+    color: #0066a9;
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        min-height: calc(100vh - 70px);
+    }
+    .footer {
+        height: 5%;
+        position: absolute;
+        left: 0 ; right: 0; bottom: 0;
+    }
+
+    body {
+        background:linear-gradient(#f2d080 25%, #0066a9 100%);
+        background-attachment: scroll;
+        color: #000;
+        font-family: "Varela Round", Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+
+    footer {
+        color: white;
+        line-height: 5%;
+        padding: 0 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    footer a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+}

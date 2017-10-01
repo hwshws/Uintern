@@ -1,19 +1,23 @@
 <?php
 session_start();
+include ("config.php");
 
-if ($_SESSION == 1) include ("sites/student.php");
-else if ($_SESSION == 2) include ("sites/teacher.php");
-
+if (isset($_SESSION['type'])) header("Location: intranet/index.php");
 if (isset($_POST["password"])) {
     $passwort = $_POST['password'];
-
-    if ($passwort == "Mars") {
-        $_SESSION["login"] = 1;
-    } else if ($passwort == "Achtopf") {
-        $_SESSION["login"] = 2;
-        include_once ("sites/teacher.php");
-    } else $errorMessage = 'E-Mail oder Passwort ungültig!<br>';
-
+    if ($passwort == $Admin_Password) {
+        $_SESSION['type'] = "admin";
+        $_SESSION['timestamp']=time();
+        header("Location: intranet/index.php");
+    } else if ($passwort == $Student_Password) {
+        $_SESSION['type'] = "student";
+        $_SESSION['timestamp']=time();
+        header("Location: intranet/index.php");
+    }  else if ($passwort == $Teacher_Password) {
+        $_SESSION['type'] = "teacher";
+        $_SESSION['timestamp']=time();
+        header("Location: intranet/index.php");
+    } else $errorMessage = '<text id="error">Passwort ungültig!</text><br><br>';
 }
 ?>
 
@@ -28,17 +32,19 @@ if (isset($_POST["password"])) {
 
     <title>Login</title>
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Varela+Round">
     <link rel="stylesheet" href="css/login.css">
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="css/global.css">
 
 </head>
 
 <body>
-<div id="wrapper">
+<header>
+    <img src="img/Lilienfries.jpg" width="100%"/>
+</header>
+<div id="content">
+    <div id="content-inside">
     <!-- Login Form -->
     <div id="login">
         <h2><span class="fontawesome-lock"></span>Interner Bereich</h2>
@@ -48,20 +54,24 @@ if (isset($_POST["password"])) {
            <p><label for="email">E-mail address</label></p>
            <p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p>
            -->
+            <p><label for="password">Bitte Passwort eingeben</label></p>
+            <p><input name="password" type="password" id="password" value="Passwort" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
             <?php
             if(isset($errorMessage)) {
-                echo '<font color="red"> '.$errorMessage.' </font>';
+                echo $errorMessage;
             }
             ?>
-            <p><label for="password">Passwort</label></p>
-            <p><input name="password" type="password" id="password" value="Passwort" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
-
             <p><input type="submit" value="Login"></p>
         </fieldset>
        </form>
     </div>
 </div>
-<footer id="stickyfooter">Sticky Footer</footer>
+</div>
+<footer class="blueBg">
+    <a href="images.php">Fotodownload</a>  |
+    <a href="files/Wochenendfreizeitplaner_SJ16-17.pdf">Wochenendfreizeitplanung</a>  |
+    <a href="files/AG-Programm_SJ16-17.pdf">AG-Plan</a>
+</footer>
 
 </body>
 </html>
