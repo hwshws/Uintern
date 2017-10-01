@@ -41,12 +41,6 @@ function student(){
             case "Projekte.zip";
                 download($download);
                 break;
-            case "../index.php";
-                download($download);
-                break;
-            case "download.php";
-                download($download);
-                break;
             default:
                 header("Location: ../index.php");
                 break;
