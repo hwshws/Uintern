@@ -48,6 +48,7 @@ if (isset($_POST["password"])) {
     <!-- Login Form -->
     <div id="login">
         <h2><span class="fontawesome-lock"></span>Interner Bereich</h2>
+        <br><br>
       <form method="post" action="index.php">
         <fieldset>
            <!--
